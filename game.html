@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogando - MeuPoki</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="game-page">
+
+    <nav class="game-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        <h1 id="gameTitle">Carregando Jogo...</h1>
+    </nav>
+
+    <div class="player-wrapper">
+        <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // Pega os dados enviados pela URL e injeta no player (iframe)
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameUrl = urlParams.get('url');
+        const gameName = urlParams.get('name');
+
+        if (gameUrl) {
+            document.getElementById('gameFrame').src = gameUrl;
+            document.getElementById('gameTitle').textContent = gameName || 'Jogo';
+        }
+    </script>
+</body>
+</html>
