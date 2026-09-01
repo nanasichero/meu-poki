@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #0f172a;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid #334155;
+    width: 300px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 0.5rem;
+    outline: none;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    min-height: calc(100vh - 73px);
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #1e293b;
+    padding: 1.5rem;
+    border-right: 1px solid #334155;
+    position: sticky;
+    top: 73px;
+    height: calc(100vh - 73px);
+}
+
+.sidebar h3 {
+    margin-bottom: 1rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+    color: #cbd5e1;
+}
+
+.sidebar li:hover, .sidebar li.active {
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+}
+
+.game-container {
+    flex: 1;
+    padding: 2rem;
+}
+
+.game-container h2 {
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.game-card {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    border: 1px solid #334155;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+}
+
+.game-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background: #334155;
+}
+
+.game-card h4 {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Estilos da Tela do Jogo */
+.game-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-nav {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1e293b;
+    gap: 1.5rem;
+    border-bottom: 1px solid #334155;
+}
+
+.back-btn {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.player-wrapper {
+    flex: 1;
+    background: #000;
+}
+
+.player-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
