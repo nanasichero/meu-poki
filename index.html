@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portal de Jogos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎮 <span>MeuPoki</span></div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Pesquisar jogos...">
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h3>Categorias</h3>
+            <ul>
+                <li class="active" data-category="all">Todos os Jogos</li>
+                <li data-category="futebol">Futebol</li>
+                <li data-category="obby">Obby & 3D</li>
+                <li data-category="acao">Ação & Runner</li>
+            </ul>
+        </aside>
+
+        <section class="game-container">
+            <h2>Jogos em Destaque</h2>
+            <div id="gamesGrid" class="grid">
+                <!-- Os jogos serão carregados aqui pelo JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
