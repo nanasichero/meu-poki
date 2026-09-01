@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogando - MeuPoki</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="game-page">
+
+    <nav class="game-nav">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        <h1 id="gameTitle">Carregando Jogo...</h1>
+        <a id="fullScreenBtn" href="#" target="_blank" class="back-btn" style="margin-left: auto; background: #38bdf8; color: #0f172a; padding: 5px 12px; border-radius: 6px;"><i class="fa-solid fa-expand"></i> Tela Cheia</a>
+    </nav>
+
+    <div class="player-wrapper">
+        <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameUrl = urlParams.get('url');
+        const gameName = urlParams.get('name');
+
+        if (gameUrl) {
+            document.getElementById('gameFrame').src = gameUrl;
+            document.getElementById('gameTitle').textContent = gameName || 'Jogo';
+            document.getElementById('fullScreenBtn').href = gameUrl;
+        }
+    </script>
+</body>
+</html>
